@@ -121,6 +121,5 @@ class Book
             System.out.print("Maximum price Comic Book : "+max);
             System.out.print("Minimum price Comic Book : "+min);
         }
-
     }
     }
