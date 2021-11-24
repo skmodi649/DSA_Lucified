@@ -64,7 +64,7 @@ public class Lab10_4 {
         for (Map.Entry<String, String> e : h1.entrySet())
         {
             String student = e.getKey();
-            if(student.equals(name)){
+            if(student.equalsIgnoreCase(name)){
                 course = e.getValue();
                 break;}
         }
@@ -79,7 +79,7 @@ public class Lab10_4 {
             {
                 String coursera = e.getKey();
                 String teacher = e.getValue();
-                if(a.equals(coursera))
+                if(a.equalsIgnoreCase(coursera))
                     System.out.println(teacher);
             }
         }

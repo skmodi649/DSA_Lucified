@@ -15,6 +15,7 @@ public class Lab10_2 {
     public static void main(String[] args) {
         System.out.println("Name : Suraj Kumar");
         System.out.println("Registration Number : 20BCE2835");
+        System.out.println("===============================================================");
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter the sentence : ");
         String sent = sc.next();

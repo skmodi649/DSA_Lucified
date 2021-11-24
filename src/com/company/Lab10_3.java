@@ -23,6 +23,7 @@ class Book
     {
         System.out.println("Name : Suraj Kumar");
         System.out.println("Registration Number : 20BCE2835");
+        System.out.println("------------------------------------------------------");
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of books : ");
@@ -58,7 +59,7 @@ class Book
 
         System.out.println("*************List of Comic type books**************");
         for (Book book : comic) {
-            int max = 0 , min = 0;
+            int max = 0 , min = book.price;
             System.out.println(book);
             ArrayList<String> list = new ArrayList<>();
             for(int i = 0 ; i < comic.size() ; i++) {
@@ -69,18 +70,15 @@ class Book
                 if(val < min)
                     min = val;
             }
-        Collections.sort(list);
-            System.out.println("***********List of Comic books in ascending order***********");
-            for(int i = 0 ; i < comic.size() ; i++)
-                System.out.print(list.get(i)+" ");
-            System.out.println();
-            System.out.print("Maximum price Comic Book : "+max);
-            System.out.print("Minimum price Comic Book : "+min);
+            System.out.println("Maximum price Comic Book : "+max);
+            System.out.println("Minimum price Comic Book : "+min);
         }
+
+
 
         System.out.println("*************List of Fiction type books**************");
         for (Book book : fiction) {
-            int max = 0 , min = 0;
+            int max = 0 , min = book.price;
             System.out.println(book);
             ArrayList<String> list = new ArrayList<>();
             for(int i = 0 ; i < fiction.size() ; i++) {
@@ -96,13 +94,15 @@ class Book
             for(int i = 0 ; i < fiction.size() ; i++)
                 System.out.print(list.get(i)+" ");
             System.out.println();
-            System.out.print("Maximum price Comic Book : "+max);
-            System.out.print("Minimum price Comic Book : "+min);
+            System.out.println("Maximum price Comic Book : "+max);
+            System.out.println("Minimum price Comic Book : "+min);
         }
+
+
 
         System.out.println("*************List of Comic type books**************");
         for (Book book : cooking){
-            int max = 0 , min = 0;
+            int max = 0 , min = book.price;
             System.out.println(book);
             ArrayList<String> list = new ArrayList<>();
             for(int i = 0 ; i < cooking.size() ; i++) {
@@ -114,12 +114,12 @@ class Book
                     min = val;
             }
             Collections.sort(list);
-            System.out.println("***********List of Fiction books in ascending order***********");
+            System.out.println("***********List of Comic books in ascending order***********");
             for(int i = 0 ; i < cooking.size() ; i++)
                 System.out.print(list.get(i)+" ");
             System.out.println();
-            System.out.print("Maximum price Comic Book : "+max);
-            System.out.print("Minimum price Comic Book : "+min);
+            System.out.println("Maximum price Comic Book : "+max);
+            System.out.println("Minimum price Comic Book : "+min);
         }
     }
     }
