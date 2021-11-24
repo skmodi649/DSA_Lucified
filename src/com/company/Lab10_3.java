@@ -43,83 +43,100 @@ class Book
             int price = sc.nextInt();
             arr[i] = new Book(name , author , type , price);
         }
-        ArrayList<Book>  fiction = new ArrayList<>();
-        ArrayList<Book>  comic = new ArrayList<>();
-        ArrayList<Book>  cooking = new ArrayList<>();
+        ArrayList<String>  fiction = new ArrayList<>();
+        ArrayList<String>  comic = new ArrayList<>();
+        ArrayList<String>  cooking = new ArrayList<>();
+        ArrayList<String> fiction_name = new ArrayList<>();
+        ArrayList<String> comic_name = new ArrayList<>();
+        ArrayList<String> cooking_name = new ArrayList<>();
+        ArrayList<Integer> fiction_price = new ArrayList<>();
+        ArrayList<Integer> comic_price = new ArrayList<>();
+        ArrayList<Integer> cooking_price = new ArrayList<>();
 
         for(int i = 0 ;i < n ; i++)
         {
-            if(Objects.equals(arr[i].type, "comic"))
-                comic.add(arr[i]);
-            if(Objects.equals(arr[i].type, "fiction"))
-                fiction.add(arr[i]);
-            if(Objects.equals(arr[i].type, "cooking"))
-                cooking.add(arr[i]);
-        }
+            String typa = arr[i].type;
+            int pricea = arr[i].price;
+            String namea = arr[i].name;
+            if(typa.equals("comic")){
+                comic.add(namea);
+                comic_name.add(namea);
+            comic_price.add(pricea);}
 
-        System.out.println("*************List of Comic type books**************");
-        for (Book book : comic) {
-            int max = 0 , min = book.price;
-            System.out.println(book);
-            ArrayList<String> list = new ArrayList<>();
-            for(int i = 0 ; i < comic.size() ; i++) {
-                list.add(book.name);
-                int val = book.price;
-                if(val > max)
-                    max = val;
-                if(val < min)
-                    min = val;
-            }
-            System.out.println("Maximum price Comic Book : "+max);
-            System.out.println("Minimum price Comic Book : "+min);
+            if(typa.equals("fiction")){
+                fiction.add(namea);
+                fiction_name.add(namea);
+            fiction_price.add(pricea);}
+
+            if(typa.equals("cooking")){
+                cooking.add(namea);
+                cooking_name.add(namea);
+            cooking_price.add(pricea);}
         }
 
 
-
-        System.out.println("*************List of Fiction type books**************");
-        for (Book book : fiction) {
-            int max = 0 , min = book.price;
-            System.out.println(book);
-            ArrayList<String> list = new ArrayList<>();
-            for(int i = 0 ; i < fiction.size() ; i++) {
-                list.add(book.name);
-                int val = book.price;
-                if(val > max)
-                    max = val;
-                if(val < min)
-                    min = val;
-            }
-            Collections.sort(list);
-            System.out.println("***********List of Fiction books in ascending order***********");
-            for(int i = 0 ; i < fiction.size() ; i++)
-                System.out.print(list.get(i)+" ");
-            System.out.println();
-            System.out.println("Maximum price Comic Book : "+max);
-            System.out.println("Minimum price Comic Book : "+min);
+        System.out.println("##################Comic type books#####################");
+        int max_comic = 0 , min_comic = comic_price.get(0);
+        System.out.println("(A) List");
+        for (String s : comic)
+            System.out.print(s + " ");
+        System.out.println();
+        System.out.println("(B) Sorted List");
+        Collections.sort(comic_name);
+        for (String s : comic_name)
+            System.out.print(s + " ");
+        System.out.println();
+        for(int val : comic_price){
+            if(val > max_comic)
+                max_comic = val;
+            if(val < min_comic)
+                min_comic = val;
         }
+        System.out.println("Maximum Price of Comic Book : "+max_comic);
+        System.out.println("Minimum Price of Comic Book : "+min_comic);
 
 
 
-        System.out.println("*************List of Comic type books**************");
-        for (Book book : cooking){
-            int max = 0 , min = book.price;
-            System.out.println(book);
-            ArrayList<String> list = new ArrayList<>();
-            for(int i = 0 ; i < cooking.size() ; i++) {
-                list.add(book.name);
-                int val = book.price;
-                if(val > max)
-                    max = val;
-                if(val < min)
-                    min = val;
-            }
-            Collections.sort(list);
-            System.out.println("***********List of Comic books in ascending order***********");
-            for(int i = 0 ; i < cooking.size() ; i++)
-                System.out.print(list.get(i)+" ");
-            System.out.println();
-            System.out.println("Maximum price Comic Book : "+max);
-            System.out.println("Minimum price Comic Book : "+min);
+        System.out.println("##################Fiction type books#####################");
+        int max_ficion = 0 , min_fiction = fiction_price.get(0);
+        System.out.println("(A) List");
+        for (String s : fiction)
+            System.out.print(s + " ");
+        System.out.println();
+        System.out.println("(B) Sorted List");
+        Collections.sort(fiction_name);
+        for (String s : fiction_name)
+            System.out.print(s + " ");
+        System.out.println();
+        for(int val : fiction_price){
+            if(val > max_ficion)
+                max_ficion = val;
+            if(val < min_fiction)
+                min_fiction = val;
         }
+        System.out.println("Maximum Price of Comic Book : "+max_ficion);
+        System.out.println("Minimum Price of Comic Book : "+min_fiction);
+
+
+
+        System.out.println("##################Cooking type books#####################");
+        int max_cooking = 0 , min_cooking = cooking_price.get(0);
+        System.out.println("(A) List");
+        for (String s : cooking)
+            System.out.print(s + " ");
+        System.out.println();
+        System.out.println("(B) Sorted List");
+        Collections.sort(cooking_name);
+        for (String s : cooking_name)
+            System.out.print(s + " ");
+        System.out.println();
+        for(int val : cooking_price){
+            if(val > max_cooking)
+                max_cooking = val;
+            if(val < min_cooking)
+                min_cooking = val;
+        }
+        System.out.println("Maximum Price of Comic Book : "+max_cooking);
+        System.out.println("Minimum Price of Comic Book : "+min_cooking);
     }
     }
