@@ -88,9 +88,26 @@ public class IIRFilter {
     //Driver function
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        System.out.print("Enter the number of orders : ");
+        System.out.println("Enter the number of orders : ");
         int order = sc.nextInt();
+        System.out.println("Enter the number of denominator coeffs : ");
+        int a = sc.nextInt();
+        System.out.println("Enter the number of numerator coeffs : ");
+        int b = sc.nextInt();
+        double aCoeffs[] = new double[a];
+        double bCoeffs[] = new double[b];
+        System.out.println("Enter the coefficients for denominator : ");
+        for(int i = 0 ; i < a ; i++){
+            aCoeffs[i] = sc.nextDouble();
+        }
+        System.out.println("Enter the coefficients for numerator : ");
+        for(int i = 0 ; i < b ; i++){
+            bCoeffs[i] = sc.nextDouble();
+        }
         IIRFilter obj = new IIRFilter(order);
-
+        System.out.println("Enter the sample : ");
+        double sample = sc.nextDouble();
+        obj.setCoeffs(aCoeffs , bCoeffs);
+        System.out.println("The result : " + obj.process(sample));
     }
 }
